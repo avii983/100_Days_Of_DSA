@@ -91,5 +91,9 @@ int main()
         printf("%d", arr2[i]);
         printf(" ");
     }
+    free(nums1);
+    free(nums2);
+    free(arr2);
     return 0;
+
 }
