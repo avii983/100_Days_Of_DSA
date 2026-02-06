@@ -49,6 +49,8 @@ int main(){
         }
     }
     printf("The element %d is not present in not present in the array\n" , element);
+    free(arr);
     return 0;
+
 
 }
