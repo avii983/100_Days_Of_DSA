@@ -47,5 +47,7 @@ int main(){
             }
             int last_element = n - 1;
             reversing(arr , n , last_element);
+            free(arr);
             return 0;
+
 }
