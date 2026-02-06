@@ -59,5 +59,7 @@ int main()
         printf(" ");
         count += 1;
     }
+    free(arr);
     return 0;
+
 }
