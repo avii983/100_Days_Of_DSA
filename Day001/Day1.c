@@ -30,14 +30,16 @@ int main()
     int n, position = 0, element = 0;
     scanf("%d", &n);
     printf("\n");
-    int *arr = malloc(n * sizeof(int));
+    getchar();
+    int *arr = malloc((n + 1) * sizeof(int));
     int i = n, j = n - 1;
     int count = 0;
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
     }
     printf("\n");
+    getchar();
     scanf("%d", &position);
     printf("\n");
     scanf("%d", &element);
@@ -45,6 +47,11 @@ int main()
     {
         arr[i] = arr[j];
 
+        if (i + 1 == position)
+        {
+            arr[i] = element;
+            i += 1;
+        }
         if (j + 1 == position)
         {
             arr[j] = element;
@@ -53,13 +60,11 @@ int main()
         j -= 1;
         i -= 1;
     }
-    while (count < n)
+    while (count < n + 1)
     {
         printf("%d", arr[count]);
         printf(" ");
         count += 1;
     }
-    free(arr);
     return 0;
-
 }
