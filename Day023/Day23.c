@@ -27,7 +27,6 @@ struct node
 {
     int value;
     struct node *next;
-    struct node *merg_next;
 };
 struct node *createnode(int data)
 {
