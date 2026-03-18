@@ -52,7 +52,7 @@ void insertAtend(struct node **head, int data)
 void deletion(struct node **head, int key)
 {
     struct node *temp = *head;
-    while(temp->next->value != key || temp != NULL)
+    while(temp->next->value != key)
     {
        temp = temp->next;
     }
