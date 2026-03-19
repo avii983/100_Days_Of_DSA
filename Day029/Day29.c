@@ -62,27 +62,27 @@ void cycling(struct node **head)
 
 void Rotation(struct node **head, int data)
 {
+    if (head == NULL || data == 0)
+    {
+
+        struct node *temp1 = *head;
+        while(temp1->next->value != (*head)->value)
+        {
+           temp1 = temp1->next;
+        }
+        *head = temp1;
+        temp1->next = NULL;
+        return;
+    }
     struct node *temp = *head;
     int count = 1;
-    int check = 1;
     while (count < data)
     {
         temp = temp->next;
         count += 1;
     }
-    if (check <= data)
-    {
-        *head = temp->next;
-        temp->next = NULL;
-    }
-    else
-    {
-        while (temp->next->value != (*head)->value)
-        {
-            temp = temp->next;
-        }
-        temp->next = NULL;
-    }
+    *head = temp->next;
+    temp->next = NULL;
 }
 
 void printing(struct node *head)
@@ -109,6 +109,6 @@ int main()
     }
     cycling(&head);
     scanf("%d", &node1);
-    Rotation(&head, abs(n - node1));
+    Rotation(&head, abs(n - (node1 % n)));
     printing(head);
 }
